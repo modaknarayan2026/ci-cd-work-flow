@@ -1,0 +1,26 @@
+name: CI-CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ci-cd-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: CI - Build/Test step
+      - name: Build project
+        run: echo "Building project..."
+
+      - name: Run tests
+        run: echo "Running tests..."
+
+      # Step 3: CD - Deploy step
+      - name: Deploy
+        run: echo "Deploying application..."
